@@ -1,0 +1,64 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	  <Table id="tb_my_bookings" items="{oViewBookModel>/Bookings}">
+      <columns >
+        <Column id="my_bookings_col1">
+          <Text id="my_bookings_txt1" text="Booking ID"/>
+        </Column>
+        <Column id="my_bookings_col2">
+          <Text id="my_bookings_txt2" text="Trip Date"/>
+        </Column>
+        <Column id="my_bookings_col3">
+          <Text id="my_bookings_txt3" text="Trip Time"/>
+        </Column>
+        <Column id="my_bookings_col4">
+          <Text id="my_bookings_txt4" text="Seats Booked"/>
+        </Column>
+        <Column id="my_bookings_col11">
+          <Text id="my_bookings_txt19" text="Route"/>
+        </Column>
+        <Column id="my_bookings_col5">
+          <Text id="my_bookings_txt5" text="Provider Name"/>
+        </Column>
+        <Column id="my_bookings_col6">
+          <Text id="my_bookings_txt6" text="Provider Contact Number"/>
+        </Column>
+        <Column id="my_bookings_col7">
+          <Text id="my_bookings_txt7" text="Vehicle Number"/>
+        </Column>
+        <Column id="my_bookings_col8">
+          <Text id="my_bookings_txt8" text="Vehicle Name"/>
+        </Column>
+        <Column id="my_bookings_col9">
+          <Text id="my_bookings_txt9" text="Cancel"/>
+        </Column>
+        <Column id="my_bookings_col10">
+          <Text id="my_bookings_txt18" text="Trip Status"/>
+        </Column>
+      </columns>
+      <items>
+        <ColumnListItem id="my_bookings_col_list">
+        <cells>
+          <Text id="my_bookings_txt10" text="{oViewBookModel>BookingId}"/>
+          <Text id="my_bookings_txt11" text="{ path: 'oViewBookModel>TripDate', formatter: '.customFormatter.formatDate'}"/>
+          <Text id="my_bookings_txt12" text="{ path: 'oViewBookModel>TripTime/ms', formatter: '.customFormatter.formatTime'}"/>
+          <Text id="my_bookings_txt13" text="{oViewBookModel>SeatsBooked}"/>
+          <Text id="my_bookings_txt20" text="{path: 'oViewBookModel>Stops', formatter: '.customFormatter.formatRoute'}"/>
+          <Text id="my_bookings_txt14" text="{oViewBookModel>FirstName} {oViewBookModel>LastName}"/>
+          <Text id="my_bookings_txt15" text="{oViewBookModel>PhoneNumber}"/>
+          <Text id="my_bookings_txt16" text="{oViewBookModel>VehicleNo}"/>
+          <Text id="my_bookings_txt17" text="{oViewBookModel>VehicleName}"/>
+          <Button id="btn_cancel_booking" icon="sap-icon://decline" press="onCancelTrip" type="Reject" class ="sapUiTinyMarginBegin" tooltip="Cancel trip" enabled="{parts: [{path: 'oViewBookModel>TripDate'},{path: 'oViewBookModel>TripTime/ms'}],formatter: '.customFormatter.formatButton'}"/> 
+          <HBox id="my_bookings_hbox1">
+            <ComboBox id="my_bookings_feedback" selectedKey="{oViewBookModel>ProviderFeedback}">
+              <core:Item id="provider_feedback_c" key="C" text="Provider came"/>
+              <core:Item id="provider_feedback_n" key="N" text="Provider doesn't appear"/>
+          </ComboBox>
+          <Button id="btn_feedback" icon="sap-icon://feedback" press="onFeedback" type="Transparent" class ="sapUiTinyMarginBegin" tooltip="Submit feedback"/>
+          </HBox>
+        </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+</core:FragmentDefinition>

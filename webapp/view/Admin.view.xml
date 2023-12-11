@@ -1,0 +1,31 @@
+<mvc:View controllerName="com.applexus.commutecompanion.controller.Admin"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core">
+    <Page id="admin_page" class="sap.m.IconTabBar"   backgroundDesign="Solid" contentOnlyBusy="true" titleLevel="H6" showHeader="false">
+        <IconTabBar stretchContentHeight="true" id="icon_tb_admin"  enableTabReordering="true" headerMode="Inline"  upperCase="true" select="onSelectChanged">
+            <items>
+                <IconTabFilter id="icon_tab_f_admin1"  showAll="true" text="{i18n>adminTitle}" key="wel">
+                    <c:Fragment fragmentName="com.applexus.commutecompanion.fragment.weladmin" type="XML"/>
+                </IconTabFilter>
+                <IconTabSeparator id="icon_tab_s_admin1" />
+                <IconTabFilter id="icon_tab_f_admin2" key="req" text="Manage Request"  icon="sap-icon://manager" design="Horizontal" tooltip="Manage requests">
+                    <Text id="text_admin1" text="Manage Request" />
+                    <c:Fragment fragmentName="com.applexus.commutecompanion.fragment.manage" type="XML"/>
+                </IconTabFilter>
+                <IconTabSeparator id="icon_tab_s_admin2" />
+                <IconTabFilter id="icon_tab_f_admin3" key="user" text="Manage Users" icon="sap-icon://manager" tooltip="Manage users" iconDensityAware="false" design="Horizontal">
+                    <Text id="text_admin2" text="Manage Users" />
+                    <c:Fragment fragmentName="com.applexus.commutecompanion.fragment.user" type="XML"/>
+                </IconTabFilter>
+                <IconTabSeparator id="icon_tab_s_admin3" />
+                <IconTabFilter id="icon_tab_f_admin4" key="ldb" icon="sap-icon://lead-outdated" text="Leader Board" iconDensityAware="false" iconColor="Positive" design="Horizontal" tooltip="Leaderboard">
+                    <Text id="text_admin3" text="Leader Board" />
+                    <c:Fragment fragmentName="com.applexus.commutecompanion.fragment.reward" type="XML"/>
+                </IconTabFilter>
+                <IconTabSeparator id="icon_tab_s_admin4" />
+                <IconTabFilter id="icon_tab_f_admin5" key="logout" icon="sap-icon://visits" text="Logout" iconColor="Negative" class="logout-tab" iconDensityAware="false" design="Horizontal"/>
+            </items>
+        </IconTabBar>
+    </Page>
+</mvc:View>

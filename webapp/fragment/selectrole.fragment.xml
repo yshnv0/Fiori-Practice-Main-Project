@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog id="dialog_select_role" title="Select Role">
+        <content>
+            <f:SimpleForm id="form_select_role">
+                <f:content>
+                        <Text id="select_role_txt" text="What would you like to do today?"/>
+                </f:content>
+            </f:SimpleForm>
+        </content >
+          <content>
+        <Button id="btn_provider" text="Offer a ride" press="onProviderSelect" class="inputContainer" />
+        <Button id="btn_seeker" text="Find a ride" press="onSeekerSelect" class="inputContainer"/>
+        <Button id="btn_cancel" text="Cancel" press="oNCancel" class="inputContainer"/>
+      </content>
+    </Dialog>
+</core:FragmentDefinition> 

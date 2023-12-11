@@ -1,0 +1,20 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog id="dialog_no_licence" title="Licence Details Not Found">
+        <content>
+            <f:SimpleForm id="form_no_licence">
+                <f:content>
+                        <Text id="no_licence_txt" text="Uh Oh... Seems like you haven't entered your license details, please add them to continue.."/>
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <beginButton>
+            <Button id="btn_add_licence" press="onAddLicence" text="Add Licence Details"/>
+        </beginButton>
+        <endButton>
+            <Button id="btn_cancel" press="onCancel" text="Cancel"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition> 

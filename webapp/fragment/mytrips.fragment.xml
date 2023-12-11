@@ -1,0 +1,41 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	  <Table id="tb_my_trips" items="{oTripsJsonModel>/Trips}" noDataText="You haven't created any trips" mode="SingleSelectMaster" selectionChange="onSelectTrip">
+      <columns >
+        <Column id="my_trips_col1">
+          <Text id="my_trips_txt1"  text ="Trip id"/>
+        </Column>
+        <Column id="my_trips_col2">
+          <Text id="my_trips_txt2"  text ="Trip Date"/>
+        </Column>
+        <Column id="my_trips_col3">
+          <Text id="my_trips_txt3"  text ="Trip Time"/>
+        </Column>
+        <Column id="my_trips_col4">
+          <Text id="my_trips_txt4"  text ="Seats Left"/>
+        </Column>
+        <Column id="my_trips_col5">
+          <Text id="my_trips_txt5"  text ="Action"/>
+        </Column>
+        <Column id="my_trips_col6">
+          <Text id="my_trips_txt9"  text ="Trip Status"/>
+        </Column>
+      </columns>
+      <items>
+        <ColumnListItem id="my_trips_col_list">
+        <cells>
+          <Link id="my_trips_lnk6" text="{oTripsJsonModel>TripId}" press="onTripIdPress"/>
+          <Text id="my_trips_txt6" text="{ path: 'oTripsJsonModel>TripDate', formatter: '.customFormatter.formatDate'}"/>
+          <Text id="my_trips_txt7" text="{ path: 'oTripsJsonModel>TripTime/ms', formatter: '.customFormatter.formatTime'}"/>
+          <Text id="my_trips_txt8" text="{oTripsJsonModel>SeatsAvailable}"/>
+          <HBox id="my_trips_hbox1">
+            <Button id="btn_edit_trip" icon="sap-icon://edit" class ="sapUiTinyMarginEnd" press="onEditTrip" type="Transparent" tooltip="Edit trip"/>
+            <Button id="btn_cancel_trip" icon="sap-icon://cancel" class ="sapUiTinyMarginBegin" press="onCancelTrip" type="Reject" tooltip="Cance trip"/>
+          </HBox>
+          <Text id="my_trips_txt10" text="{oTripsJsonModel>TripStatus}"/>
+        </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+</core:FragmentDefinition>

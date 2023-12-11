@@ -1,0 +1,64 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+    <Toolbar id="toolbar_search_trips" height="3rem">
+      <HBox id="fb1_search_trips" justifyContent="End">
+        <Label id="search_trip_label1" text="Trip Date" class="sapUiTinyMarginEnd"/>
+        <DatePicker id="search_trip_date" valueFormat="yyyy-MM-dd" width="60%" class="sapUiTinyMarginBegin" change="onSearchTrips"/>
+        <!-- <Button id="btn_search_trips" text="Show available trips" press=""/>                         -->
+        <!-- <FlexBox id="_FlexBox10" class="inputContainer" alignItems="Center">
+        <Label id="_IDGenLabel616" text="Show trips for" class="smallLabel" />
+        <Input id="_IDGenInput617" width="40%" class="customSimpleForm" />
+        </FlexBox> -->
+      </HBox>
+    </Toolbar>
+	  <Table id="tb_search_trips" items="{oAvailableTripsModel>/AvailableTrips}">
+      <columns >
+        <Column id="search_trips_col1">
+          <Text id="search_trips_txt1"  text="Provider Name"/>
+        </Column>
+        <Column id="search_trips_col2">
+          <Text id="search_trips_txt2"  text="Date"/>
+        </Column>
+        <Column id="search_trips_col3">
+          <Text id="search_trips_txt3"  text="Time"/>
+        </Column>
+        <Column id="search_trips_col4">
+          <Text id="search_trips_txt4"  text="Stops"/>
+        </Column>
+        <Column id="search_trips_col5">
+          <Text id="search_trips_txt5"  text="Vehicle Number"/>
+        </Column>
+        <Column id="search_trips_col6">
+          <Text id="search_trips_txt6"  text="Vehicle Name"/>
+        </Column>
+        <Column id="search_trips_col7">
+          <Text id="search_trips_txt7"  text="Total Seats Provided"/>
+        </Column>
+        <Column id="search_trips_col8">
+          <Text id="search_trips_txt8"  text="Seats Available"/>
+        </Column>
+        <Column id="search_trips_col9">
+          <Text id="search_trips_txt9"  text="Select no of seats"/>
+        </Column>
+      </columns>
+      <items>
+        <ColumnListItem id="search_trips_col_list">
+        <cells>
+          <Text id="search_trips_txt10" text="{oAvailableTripsModel>FirstName} {oAvailableTripsModel>LastName}"/>
+          <Text id="search_trips_txt11" text="{ path: 'oAvailableTripsModel>TripDate', formatter: '.customFormatter.formatDate'}"/>
+          <Text id="search_trips_txt12" text="{ path: 'oAvailableTripsModel>TripTime/ms', formatter: '.customFormatter.formatTime'}"/>
+          <Text id="search_trips_txt13" text="{path: 'oAvailableTripsModel>Stops', formatter: '.customFormatter.formatRoute'}"/>
+          <Text id="search_trips_txt14" text="{oAvailableTripsModel>VehicleNo}"/>
+          <Text id="search_trips_txt15" text="{oAvailableTripsModel>VehicleName}"/>
+          <Text id="search_trips_txt16" text="{oAvailableTripsModel>SeatsProvided}"/>
+          <Text id="search_trips_txt17" text="{oAvailableTripsModel>SeatsAvailable}"/>
+          <HBox id="search_trips_hbox1">
+            <Input id="search_trips_seats_no" value="{oAvailableTripsModel>SeatsBooked}"/>
+            <Button id="btn_book_trip" icon="sap-icon://car-rental" press="onBookTrip" type="Accept" class ="sapUiTinyMarginBegin" tooltip="Book trip" text="Book"/>
+          </HBox>
+        </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+</core:FragmentDefinition>

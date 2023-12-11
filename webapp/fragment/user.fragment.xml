@@ -1,0 +1,49 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+    <Table id="tb_manage_user" items="{oUsersJsonModel>/Users}">
+      <columns >
+        <Column id="manage_user_col1">
+          <Text id="manage_user_txt1"  text ="User Id"/>
+        </Column>
+        <Column id="manage_user_col2">
+          <Text id="manage_user_txt2"  text ="Employee Id"/>
+        </Column>
+        <Column id="manage_user_col3">
+          <Text id="manage_user_txt3"  text ="User Name"/>
+        </Column>
+        <Column id="manage_user_col4">
+          <Text id="manage_user_txt4"  text ="Email"/>
+        </Column>
+        <Column id="manage_user_col5">
+          <Text id="manage_user_txt5"  text ="Phone Number"/>
+        </Column>
+        <Column id="manage_user_col6">
+          <Text id="manage_user_txt6"  text ="Licence Number"/>
+        </Column>
+        <Column id="manage_user_col7">
+          <Text id="manage_usertxt7"  text ="License Validity"/>
+        </Column>
+        <Column id="manage_user_col8">
+          <Text id="manage_user_txt8"  text ="Action"/>
+        </Column>
+      </columns>
+      <items>
+        <ColumnListItem id="manage_user_col_list">
+          <cells>
+            <Text id="manage_user_txt9" text="{oUsersJsonModel>UserId}"/>
+            <Text id="manage_user_txt10" text="{oUsersJsonModel>EmployeeId}"/>
+            <Text id="manage_user_txt11" text="{oUsersJsonModel>FirstName} {oUsersJsonModel>LastName}"/>
+            <Text id="manage_usertxt12" text="{oUsersJsonModel>Email}"/>
+            <Text id="manage_user_txt13" text="{oUsersJsonModel>PhoneNumber}"/>
+            <Text id="manage_user_txt14" text="{oUsersJsonModel>LicenceNumber}"/>
+            <Text id="manage_user_txt15" text="{ path: 'oUsersJsonModel>LicenceValidity', formatter: '.customFormatter.formatDate'}"/>
+            <HBox id="manage_user_hbox1">
+              <Button id="btn_block" icon="sap-icon://cancel" press="onBlock" type="Reject" tooltip="Block User"/>
+            </HBox>
+          </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+	  
+</core:FragmentDefinition>

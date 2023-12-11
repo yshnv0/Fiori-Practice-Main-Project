@@ -1,0 +1,30 @@
+<mvc:View controllerName="com.applexus.commutecompanion.controller.Registration"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="reg_page" showHeader="false">
+        <content>
+            <FlexBox id="flxbox_reg" alignItems="Center" justifyContent="Center" width="100%" height="100%" direction="Column" class="login-page">
+            <VBox id="vbox_reg1" justifyContent="Center" alignItems="Center" height="100%">
+                <Label id="label_reg1" text="Register" class="sapUiMediumMargin"  design="Bold"/>
+                <HBox id="hbox_reg1" class="login-box" justifyContent="Center">
+                    <VBox id="vbox_reg2" alignItems="Center">
+                        <Input id="empid" placeholder="Employee Id"/>
+                        <Input id="firstname" placeholder="First Name"/>
+                        <Input id="lastname" placeholder="Last Name" />
+                        <Input id="email" placeholder="Email" type="Email"/>
+                        <Input id="phno" placeholder="Phone No" type="Tel"/>
+                        <Input id="licenceno" placeholder="Licence No"/>
+                        <DatePicker id="licval" valueFormat="dd-MM-yyyy" width="87%" placeholder="Licence Valid Upto"/>
+                        <Input id="pass" placeholder="Password" type="Password"/>
+                        <Input id="cpass" placeholder="Confirm Password" type="Password"/>
+                        <Link id="link_login" text="Existing user? Login Here" press="onLoginPress" />
+                        <HBox id="hbox_reg2" justifyContent="Center">
+                            <Button id="btn_reg" text="Register" press="onRegister" class="login-button" />
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </VBox>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>

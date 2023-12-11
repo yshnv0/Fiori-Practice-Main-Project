@@ -1,0 +1,192 @@
+{
+  "_version": "1.17.0",
+  "sap.app": {
+    "id": "com.applexus.commutecompanion",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.11.1",
+      "toolsId": "0b41533a-d6d4-41d4-b764-b337164e7040"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZB14_GROUP1_MAIN_PROJECT_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.71.55",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.applexus.commutecompanion.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.applexus.commutecompanion.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteLogin",
+          "pattern": ":?query:",
+          "target": [
+            "TargetLogin"
+            
+          ]
+        },
+        {
+          "name": "RouteReg",
+          "pattern": "reg",
+          "target": [
+            "TargetReg"
+          ]
+        },
+        {
+          "name": "RouteAdmin",
+          "pattern": "admin",
+          "target": [
+            "TargetAdmin"
+          ]
+        },
+        {
+          "name": "RouteProvider",
+          "pattern": "provider/{userId}",
+          "target": [
+            "TargetProvider"
+          ]
+        }, 
+        {
+          "name": "RouteSeeker",
+          "pattern": "seeker/{userId}",
+          "target": [
+            "TargetSeeker"
+          ]
+        },
+        {
+          "name": "RouteTripBooking",
+          "pattern": "trip/{tripId}",
+          "target": [
+            "TargetTrip"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetReg": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Registration",
+          "viewName": "Registration"
+        },
+        "TargetLogin": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Login",
+          "viewName": "Login"
+        },
+        "TargetAdmin": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Admin",
+          "viewName": "Admin"
+        },
+        "TargetProvider": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Provider",
+          "viewName": "Provider"
+        }, 
+        "TargetSeeker": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Seeker",
+          "viewName": "Seeker"
+        },
+        "TargetTrip": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "TripBooking",
+          "viewName": "TripBooking"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.applexus.commutecompanion.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

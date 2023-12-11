@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog id="edit_trip" title="Your trip details">
+        <content>
+            <f:SimpleForm id="form_edit_trip" class="customSimpleForm">
+                <f:content>
+                        <Label id="edit_trip_label1" text="Trip ID"/>
+                        <Input id="trip_id" editable="false" value="{oEditTripPayloadModel>/oEditTripPayload/TripId}"/>
+                        <Label id="edit_trip_label2" text="Trip Date"/>
+                        <DatePicker id="edit_trip_date" valueFormat="dd-MM-yyyy" width="40%" dateValue="{ path: 'oEditTripPayloadModel>/oEditTripPayload/TripDate'}"/>
+                        <Label id="edit_trip_label3" text="Trip Time"/>
+                        <TimePicker id="edit_trip_time" valueFormat="HH:mm" displayFormat="HH:mm" width="40%" value="{ path: 'oEditTripPayloadModel>/oEditTripPayload/TripTime/ms', formatter: '.customFormatter.formatTime'}"/>
+                        <Label id="edit_trip_label5" text="Seats Provided"/>
+                        <Input id="seats" editable="true" value="{oEditTripPayloadModel>/oEditTripPayload/SeatsProvided}"/>
+                        <Label id="edit_trip_label6" text="Vehicle Number"/>
+                        <Input id="vehcl_no" editable="true" value="{oEditTripPayloadModel>/oEditTripPayload/VehicleNo}"/>
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <beginButton>
+            <Button id="btn_save_trip" press="onSaveEditedTrip" text="Save" icon="sap-icon://save"/>
+        </beginButton>
+        <endButton>
+            <Button id="btn_close" icon="sap-icon://decline" text="Cancel" press="onCloseEditTripDetails"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition> 

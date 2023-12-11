@@ -1,0 +1,28 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog id="trip_details" title="Your trip details">
+        <content>
+            <f:SimpleForm id="form_trip_details" class="customSimpleForm">
+                <f:content>
+                        <Label id="trip_details_label1" text="Trip ID"/>
+                        <Input id="trip_id" editable="false" value="{oTripModel>/oTripDetails/TripId}"/>
+                        <Label id="trip_details_label2" text="Trip Date"/>
+                        <Input id="trip_date" editable="false" value="{ path: 'oTripModel>/oTripDetails/TripDate', formatter: '.customFormatter.formatDate'}"/>
+                        <Label id="trip_details_label3" text="Trip Time"/>
+                        <Input id="trip_time" editable="false" value="{ path: 'oTripModel>/oTripDetails/TripTime/ms', formatter: '.customFormatter.formatTime'}"/>
+                        <Label id="trip_details_label4" text="Route"/>
+                        <Input id="route" editable="false" value="{oTripModel>/oTripDetails/Stops}"/>
+                        <Label id="trip_details_label5" text="Seats Provided"/>
+                        <Input id="seats" editable="false" value="{oTripModel>/oTripDetails/SeatsProvided}"/>
+                        <Label id="trip_details_label6" text="Vehicle Number"/>
+                        <Input id="vehcl_no" editable="false" value="{oTripModel>/oTripDetails/VehicleNo}"/>
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <endButton>
+            <Button id="btn_close" icon="sap-icon://decline" press="onCloseTripDetails"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition> 

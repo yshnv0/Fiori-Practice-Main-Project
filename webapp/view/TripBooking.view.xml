@@ -1,0 +1,58 @@
+<mvc:View controllerName="com.applexus.commutecompanion.controller.TripBooking"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core">
+    <Page id="tripbooking_page" backgroundDesign="Solid" contentOnlyBusy="true" titleLevel="H6" showHeader="false">
+        <Table id="tb_trip_bookings" items="{oTripBookingsModel>/TripBookings}" noDataText="No bookings have been made for this trip yet">
+        <!-- <headerToolbar>
+            <OverflowToolbar id="trip_bookings_oftb">
+                <content>
+                    <Button id="btn_load_bookings" text="Load bookings for this trip" press="onLoadTrips" type="Transparent"/>
+                </content>
+            </OverflowToolbar>
+        </headerToolbar> -->
+            <columns >
+                <Column id="trip_bookings_col1">
+                <Text id="trip_bookings_txt1" text="Booking ID"/>
+                </Column>
+                <Column id="trip_bookings_col2">
+                <Text id="trip_bookings_txt2" text="Seeker Name"/>
+                </Column>
+                <Column id="trip_bookings_col3">
+                <Text id="trip_bookings_txt3" text="Seats Booked"/>
+                </Column>
+                <Column id="trip_bookings_col4">
+                <Text id="trip_bookings_txt4" text="Booking Date"/>
+                </Column>
+                <Column id="trip_bookings_col11">
+                <Text id="trip_bookings_txt19" text="Seekeer Contact Number"/>
+                </Column>
+                <Column id="trip_bookings_col5">
+                <Text id="trip_bookings_txt5" text="Provider Feedback"/>
+                </Column>
+                <Column id="trip_bookings_col6">
+                <Text id="trip_bookings_txt6" text="Seeker Feedback"/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem id="trip_bookings_col_list">
+                    <cells>
+                        <Text id="trip_bookings_txt7" text="{oTripBookingsModel>BookingId}"/>
+                        <Text id="trip_bookings_txt8" text="{oTripBookingsModel>FirstName} {oTripBookingsModel>LastName}"/>
+                        <Text id="trip_bookings_txt9" text="{oTripBookingsModel>SeatsBooked}"/>
+                        <Text id="trip_bookings_txt10" text="{ path: 'oTripBookingsModel>BookingDate', formatter: '.customFormatter.formatDate'}"/>
+                        <Text id="trip_bookings_txt11" text="{oTripBookingsModel>PhoneNumber}"/>
+                        <Text id="trip_bookings_txt12" text="{oTripBookingsModel>ProviderFeedback}"/>
+                        <HBox id="trip_bookings_hbox1">
+                            <ComboBox id="trip_bookings_feedback" selectedKey="{oTripBookingsModel>SeekerFeedback}">
+                                <c:Item id="seeker_feedback_c" key="P" text="Seeker came"/>
+                                <c:Item id="seeker_feedback_n" key="A" text="Seeker doesn't appear"/>
+                            </ComboBox>
+                            <Button id="btn_seeker_feedback" icon="sap-icon://feedback" press="onFeedback" type="Transparent" class ="sapUiTinyMarginBegin" tooltip="Submit feedback"/>
+                        </HBox>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

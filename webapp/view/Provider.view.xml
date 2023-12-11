@@ -1,0 +1,29 @@
+<mvc:View controllerName="com.applexus.commutecompanion.controller.Provider"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+   <Page id="provider_page" class="sap.m.IconTabBar" backgroundDesign="Solid" contentOnlyBusy="true" titleLevel="H6" showHeader="false">
+	<IconTabBar stretchContentHeight="true" id="_IDGenIconTabBar7"  enableTabReordering="true" headerMode="Inline"  upperCase="true" select="onProviderSelect">
+		<items>
+			<IconTabFilter id="icon_tab_f_prov1" showAll="true" text="Provider Home" key="welc" tooltip="Welcome page">
+				<c:Fragment fragmentName="com.applexus.commutecompanion.fragment.welcpro" type="XML"/>
+			</IconTabFilter>
+			<IconTabSeparator id="icon_tab_s_prov1"/>
+			<IconTabFilter id="icon_tab_f_prov2" key="create_trip" text="Create Trip" icon="sap-icon://insurance-car" design="Horizontal" tooltip="Create a trip">
+				<c:Fragment fragmentName="com.applexus.commutecompanion.fragment.createtrip" type="XML"/>
+			</IconTabFilter>
+			<IconTabSeparator id="icon_tab_s_prov2"/>
+			<IconTabFilter id="icon_tab_f_prov3" key="my_trips" text="My Trips" icon="sap-icon://journey-change" tooltip="My trips" iconDensityAware="false" design="Horizontal" >
+				<c:Fragment fragmentName="com.applexus.commutecompanion.fragment.mytrips" type="XML"/>
+			</IconTabFilter>
+			<IconTabSeparator id="icon_tab_s_prov3"  />
+			<IconTabFilter id="icon_tab_f_prov4" key="my_acc" text="Add your Vehicle" icon="sap-icon://account" iconDensityAware="false" iconColor="Positive" design="Horizontal" >
+				<Text id="text_prov2" text="My Account" />
+				<c:Fragment fragmentName="com.applexus.commutecompanion.fragment.vehicle" type="XML"/>
+			</IconTabFilter>
+			<IconTabSeparator id="icon_tab_s_prov4"  />
+			<IconTabFilter id="icon_tab_f_prov5" key="logout" icon="sap-icon://visits" text="Logout" iconColor="Negative" class="logout-tab" iconDensityAware="false" design="Horizontal"/>
+		</items>
+	</IconTabBar>
+    </Page>
+</mvc:View>

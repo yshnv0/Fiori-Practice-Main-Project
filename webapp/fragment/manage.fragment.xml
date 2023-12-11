@@ -1,0 +1,49 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	  <Table id="tb_manage_req" items="{oRequestsJsonModel>/Requests}">
+      <columns >
+        <Column id="manage_req_col1">
+          <Text id="manage_req_txt1"  text ="User Id"/>
+        </Column>
+        <Column id="manage_req_col2">
+          <Text id="manage_req_txt2"  text ="Employee Id"/>
+        </Column>
+        <Column id="manage_req_col3">
+          <Text id="manage_req_txt3"  text ="User Name"/>
+        </Column>
+        <Column id="manage_req_col4">
+          <Text id="manage_req_txt4"  text ="Email"/>
+        </Column>
+        <Column id="manage_req_col5">
+          <Text id="manage_req_txt5"  text ="Phone Number"/>
+        </Column>
+        <Column id="manage_req_col6">
+          <Text id="manage_req_txt6"  text ="Licence Number"/>
+        </Column>
+        <Column id="manage_req_col7">
+          <Text id="manage_req_txt7"  text ="License Validity"/>
+        </Column>
+        <Column id="manage_req_col8">
+          <Text id="manage_req_txt8"  text ="Action"/>
+        </Column>
+      </columns>
+      <items>
+        <ColumnListItem id="manage_req_col_list">
+          <cells>
+            <Text id="manage_req_txt9" text="{oRequestsJsonModel>UserId}"/>
+            <Text id="manage_req_txt10" text="{oRequestsJsonModel>EmployeeId}"/>
+            <Text id="manage_req_txt11" text="{oRequestsJsonModel>FirstName} {oRequestsJsonModel>LastName}"/>
+            <Text id="manage_req_txt12" text="{oRequestsJsonModel>Email}"/>
+            <Text id="manage_req_txt13" text="{oRequestsJsonModel>PhoneNumber}"/>
+            <Text id="manage_req_txt14" text="{oRequestsJsonModel>LicenceNumber}"/>
+            <Text id="manage_req_txt15" text="{ path: 'oRequestsJsonModel>LicenceValidity', formatter: '.customFormatter.formatDate'}"/>
+            <HBox id="manage_req_hbox1">
+              <Button id="btn_approve" icon="sap-icon://accept" class ="sapUiTinyMarginEnd" press="onApprove" type="Accept" tooltip="Approve"/>
+              <Button id="btn_reject" icon="sap-icon://cancel" press="onReject" type="Reject" tooltip="Reject"/>
+            </HBox>
+          </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+</core:FragmentDefinition>

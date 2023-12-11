@@ -1,0 +1,32 @@
+<core:FragmentDefinition 
+  xmlns="sap.m" 
+  xmlns:core="sap.ui.core" 
+  xmlns:f="sap.ui.layout.form">
+  <IconTabBar stretchContentHeight="true" class="sap.m.IconTabBar" id="_IDGenIconTabBar8" enableTabReordering="true" headerMode="Inline" upperCase="true">
+    <items>
+      <IconTabFilter id="icon_tab_f_vhcl1" key="info" icon="sap-icon://car-rental" text="Add Vehicle" design="Horizontal" tooltip="Add vehicle">
+          <f:SimpleForm id="form_add_vhcl" editable="true" class="customSimpleForm">
+            <Label id="add_vhcl_label1" text="Vehicle No" />
+            <Input id="add_vhcl_vno" width="40%" />
+
+            <Label id="add_vhcl_label2" text="Vehicle Type" />
+            <ComboBox id="add_vhcl_type" selectedKey="{}" width="40%" >
+              <core:Item id="add_vhcl_suv" key="SUV" text="SUV"/>
+              <core:Item id="add_vhcl_sed" key="SED" text="Sedan"/>
+              <core:Item id="add_vhcl_hbk" key="HBK" text="Hatch Back"/>
+            </ComboBox>
+
+            <Label id="add_vhcl_label3" text="Vehicle Name" />
+            <Input id="add_vhcl_vname" width="40%" />
+
+            <Label id="add_vhcl_label5" text="Number Of Seats" />
+            <Input id="add_vhcl_vseats" width="40%"/>
+
+          </f:SimpleForm>
+          <VBox id="add_vhcl_vbox1" alignItems="Center" justifyContent="Center">
+            <Button id="btn_addd_vhcl" text="Add" press="onAddVehicle"  />
+          </VBox>
+      </IconTabFilter>
+    </items>
+  </IconTabBar>
+</core:FragmentDefinition>

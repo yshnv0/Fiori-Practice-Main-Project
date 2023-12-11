@@ -1,0 +1,24 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog id="dialog_add_licence" title="Add Licence Details">
+        <content>
+            <f:SimpleForm id="form_add_licence" class="customSimpleForm">
+                <f:content>
+                    <Label id="add_lic_leabel1" text="Licence Number" />
+                    <Input id="add_lic_lno"/>
+
+                    <Label id="add_lic_leabel2" text="Licence Validity" />
+                    <DatePicker id="add_lic_lval" valueFormat="dd-MM-yyyy" />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <beginButton>
+            <Button id="btn_provider" press="onSaveLicence" text="Save Details"/>
+        </beginButton>
+        <endButton>
+            <Button id="btn_seeker" press="onCancel" text="Cancel"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition> 

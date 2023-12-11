@@ -1,0 +1,33 @@
+<core:FragmentDefinition 
+  xmlns="sap.m" 
+  xmlns:core="sap.ui.core" 
+  xmlns:f="sap.ui.layout.form">
+          <f:SimpleForm id="form_create_trip" editable="true" class="customSimpleForm">
+          <VBox id="add_trip_vbox1" justifyContent="Center">
+            <Label id="add_trip_label1" text="Trip Date" />
+            <DatePicker id="add_trip_date" valueFormat="dd-MM-yyyy" width="40%" change="changeDate" />
+
+            <Label id="add_trip_label2" text="Trip Time"/>
+            <TimePicker id="add_trip_time" valueFormat="HH:mm" displayFormat="HH:mm" width="40%"/>
+
+            <Label id="add_trip_label3" text="From"/>
+              <Input id="add_trip_from" width="40%" />
+            <Button id="add_stop" text="Add Stops" icon="sap-icon://add" press="onAddStop"/>
+
+            <VBox id="add_trip_vbox2">
+              
+            </VBox>
+
+            <Label id="add_trip_label4" text="To"/>
+            <Input id="add_trip_to" width="40%" />
+
+            <Label id="add_trip_label5" text="Vehicle Number" />
+            <Input id="add_trip_vno" width="40%" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="handleValueHelp"/>
+
+            <Label id="add_trip_label6" text="Number Of Seats" />
+            <Input id="add_trip_vseats" width="40%"/>
+
+            <Button id="btn_add_trip" text="Add Trip" press="onAddTrip"/>
+          </VBox>
+          </f:SimpleForm>
+</core:FragmentDefinition>

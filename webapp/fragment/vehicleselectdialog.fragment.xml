@@ -1,0 +1,6 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <SelectDialog id="sd1" confirm="onConfirmVehicle"/>
+</core:FragmentDefinition> 

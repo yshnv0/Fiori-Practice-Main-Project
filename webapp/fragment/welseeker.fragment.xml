@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+            <FlexBox id="flxbox_welcome_admin" alignItems="Center" justifyContent="Center" width="100%" height="100%" direction="Column" class="login-page">
+                <!-- <VBox id="vbox_welcome_admin1" justifyContent="Center" alignItems="Center" height="100%"> -->
+                      <Label id="label_welcome_admi" text="Welcome Seeker" class="sapUiMediumMargin bright-black-label" design="Bold"/>
+                      <core:Icon id="icon1" src="sap-icon://unfavorite" size="400%"/>
+                    <Text id="label_welcome_seeker1" text="{oPointsModel>/Points/UserPoints}" class="sapUiMediumMargin bright-black-label sapMLabel"/>
+                    <!-- <HBox id="hbox_welcome_admin1" class="admin-box1">
+                        <VBox id="vbox_welcome_admin2"> -->
+                            
+                            <!-- Add admin content here -->
+                            <!-- <Button id="btn_logout" text="Logout" press="onLogout" class="admin-button" /> -->
+                        <!-- </VBox>
+                    </HBox> -->
+                <!-- </VBox> -->
+            </FlexBox>
+</core:FragmentDefinition>

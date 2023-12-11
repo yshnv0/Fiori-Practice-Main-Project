@@ -1,0 +1,26 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+<Table id="tb_leaderboard" items="{oPointsModel>/Points}" growing="true" growingThreshold="10">
+      <columns >
+        <Column id="leaderboard_col1">
+          <Text id="leaderboard_txt1"  text ="User ID"/>
+        </Column>
+        <Column id="leaderboard_col2">
+          <Text id="leaderboard_txt2"  text ="User Name"/>
+        </Column>
+        <Column id="leaderboard_col3">
+          <Text id="leaderboard_txt3"  text ="Points"/>
+        </Column>
+      </columns>
+      <items>
+        <ColumnListItem id="leaderboard_col_list">
+        <cells>
+          <Text id="leaderboard_txt4" text="{oPointsModel>UserId}"/>
+          <Text id="leaderboard_txt5" text="{oPointsModel>FirstName} {oPointsModel>FirstName}"/>
+          <Text id="leaderboard_txt6" text="{oPointsModel>UserPoints}"/>
+        </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+</core:FragmentDefinition>

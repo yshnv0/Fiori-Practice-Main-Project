@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZB14_GROUP1_MAIN_PROJECT_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="User_Reg" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UserId"/>
+                </Key>
+                <Property Name="UserId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="User Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Employee Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="First Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Last Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="Email" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PhoneNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Phone Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LicenceNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Licence Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LicenceValidity" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Licence Validity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Password" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Vehicle" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="VehicleNumber"/>
+                </Key>
+                <Property Name="VehicleNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Vehicle Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProviderId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Provider Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VehicleName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Vehicle Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VehicleType" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Vehicle Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NoOfSeats" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Number Of Seats" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="User_Info" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UserId"/>
+                    <PropertyRef Name="UserRole"/>
+                </Key>
+                <Property Name="UserId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="User Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UserRole" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="User Role" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="User Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UserPoints" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="User Points" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Trip_Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TripId"/>
+                </Key>
+                <Property Name="TripId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Trip Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProviderId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Provider Id" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="VehicleNo" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Vehicle Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TripDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Trip Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="TripTime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Trip Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeatsProvided" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Seats Provided" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeatsAvailable" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Seats Available" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TripStatus" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Trip Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FromLocation" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="From Location" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ToLocation" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="To Location" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stops" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Stops" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Booking_Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BookingId"/>
+                </Key>
+                <Property Name="BookingId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Booking Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeekerId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Seeker Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TripId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Trip Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeatsBooked" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Seats Booked" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingStatus" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Booking Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Booking Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProviderFeedback" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Provider Feedback" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeekerFeedback" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Seeker Feedback" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="User_Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UserId"/>
+                </Key>
+                <Property Name="UserId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="User Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Employee Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="First Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Last Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="Email" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PhoneNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Phone Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LicenceNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Licence Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LicenceValidity" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Licence Validity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Password" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UserRole" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="User Role" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="User Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UserPoints" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="User Points" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="User_Status" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UserId"/>
+                </Key>
+                <Property Name="UserId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="User Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="User Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="User_Login" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UserId"/>
+                    <PropertyRef Name="Password"/>
+                </Key>
+                <Property Name="UserId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="User Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UserRole" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="User Role" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Password" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="License_Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UserId"/>
+                </Key>
+                <Property Name="UserId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="User Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LicenceNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Licence Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LicenceValidity" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Licence Validity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="View_Bookings" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BookingId"/>
+                </Key>
+                <Property Name="BookingStatus" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Booking Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Booking Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeekerId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Seeker Id" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="TripId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Trip Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TripDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Trip Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TripTime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Trip Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProviderId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Provider Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="First Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Last Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VehicleNo" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Vehicle Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VehicleName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Vehicle Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PhoneNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Phone Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeatsBooked" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Seats Booked" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stops" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Stops" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProviderFeedback" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Provider Feedback" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="EmpId" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EmployeeId"/>
+                </Key>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Employee Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Registered_User" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UserId"/>
+                </Key>
+                <Property Name="UserId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="User Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Employee Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="First Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Last Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="Email" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PhoneNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Phone Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LicenceNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Licence Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LicenceValidity" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Licence Validity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag To Distinguish Users With Status(Null and Approved)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="View_Trips" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TripId"/>
+                </Key>
+                <Property Name="TripStatus" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Trip Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TripId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Trip Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProviderId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Provider Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="First Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Last Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TripDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Trip Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="TripTime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Trip Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stops" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Stops" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VehicleNo" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Vehicle Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VehicleName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Vehicle Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeatsProvided" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Seats Provided" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeatsAvailable" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Seats Available" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeatsBooked" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Seats Booked" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="View_Trip_Bookings" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BookingId"/>
+                </Key>
+                <Property Name="BookingId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Booking Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeatsBooked" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Seats Booked" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TripId" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Trip Id" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="First Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Last Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Booking Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PhoneNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Phone Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProviderFeedback" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Provider Feedback" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SeekerFeedback" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Seeker Feedback" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZB14_GROUP1_MAIN_PROJECT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="User_RegSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.User_Reg" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="VehicleSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.Vehicle" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="User_InfoSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.User_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Trip_DetailsSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.Trip_Details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Booking_DetailsSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.Booking_Details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="User_DetailsSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.User_Details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="User_StatusSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.User_Status" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="User_LoginSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.User_Login" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="License_DetailsSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.License_Details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="View_BookingsSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.View_Bookings" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="EmpIdSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.EmpId" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Registered_UserSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.Registered_User" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="View_TripsSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.View_Trips" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="View_Trip_BookingsSet" EntityType="ZB14_GROUP1_MAIN_PROJECT_SRV.View_Trip_Bookings" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://trvlinuxvm09.applexus.com:8001/sap/opu/odata/sap/ZB14_GROUP1_MAIN_PROJECT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://trvlinuxvm09.applexus.com:8001/sap/opu/odata/sap/ZB14_GROUP1_MAIN_PROJECT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
